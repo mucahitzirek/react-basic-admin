@@ -8,11 +8,8 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { UserData as userdata } from "../data/UserData";
-
-import AddIcon from "@material-ui/icons/Add";
 import DeleteIcon from "@material-ui/icons/Delete";
 import UpdateIcon from "@material-ui/icons/Update";
-import Update from "@material-ui/icons/Update";
 
 const useStyles = makeStyles({
   table: {
