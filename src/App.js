@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  HashRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import "./App.css";
+import React from "react";
+import CalendarPage from "./pages/CalendarPage";
+import MapPage from "./pages/MapPage";
+import DataPage from "./pages/DataPage";
+import TopBar from "./components/TopBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <TopBar />
+        <Switch>
+          <Route exact path="/home" component={HomePage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/calendar" component={CalendarPage} />
+          <Route path="/map" component={MapPage} />
+          <Route exact path="/user-data" component={DataPage} />
+          <Redirect to="/login" />
+        </Switch>
+      </Router>
     </div>
   );
 }
