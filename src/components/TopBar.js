@@ -8,7 +8,7 @@ import * as FiDatabase from "react-icons/fi";
 
 function TopBar() {
   return (
-    <div className="shadow-sm bg-light mb-2">
+    <div className="shadow-sm  mb-2" style={{ backgroundColor: "#f5f5f5" }}>
       <nav className="navbar navbar-light  container navbar-expand">
         <Link className="navbar-brand" to="/home">
           <img src={logo} width="55" alt="Admin Logo" />

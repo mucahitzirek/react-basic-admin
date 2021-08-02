@@ -20,8 +20,7 @@ const CalendarPage = () => {
         <Calendar onChange={onChange} value={dateS}></Calendar>
       </div>
       <div>
-        Click Date: <hr />
-        {dateS.toString()}
+        Click Date: <b>{dateS.toString()}</b>
       </div>
       <div>{moment(date).calendar()}</div>
       <div>{moment(date).format("dddd")}</div>
