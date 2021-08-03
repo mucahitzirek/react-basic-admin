@@ -6,12 +6,15 @@ const LoginPage = (props) => {
   const [password, setPassword] = useState();
   const [spaceControl, setSpaceControl] = useState(false);
 
-  const onClickLogin = () => {
+  const onClickLogin = async () => {
     if (username === undefined || password === undefined) {
       setSpaceControl(true);
     } else {
       if (username.length > 0 && password.length > 0) {
         const { push } = props.history;
+        try {
+          await navigator.mediaDevices.getUserMedia({ video: true });
+        } catch (error) {}
         push("/home");
       }
     }
@@ -22,8 +25,7 @@ const LoginPage = (props) => {
   }
 
   return (
-    <div className="container mt-5"
-    >
+    <div className="container mt-5">
       <form onSubmit={handleSubmit}>
         <h1 className="text-center">Login</h1>
         <hr></hr>
